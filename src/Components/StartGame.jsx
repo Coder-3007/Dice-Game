@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Button } from "../styled/Button";
 
-const StartGame = () => {
+const StartGame = ({ toggle }) => {
   return (
     <Container>
       <div>
@@ -9,7 +10,7 @@ const StartGame = () => {
 
       <div className="content">
         <h1>Dice Game</h1>
-        <Button>Play Now</Button>
+        <Button onClick={toggle}>Play Now</Button>
       </div>
     </Container>
   );
@@ -18,7 +19,7 @@ const StartGame = () => {
 export default StartGame;
 
 const Container = styled.div`
-  max-width: 1180;
+  max-width: 1180px;
   height: 100vh;
   display: flex;
   margin: 0 auto;
@@ -31,21 +32,5 @@ const Container = styled.div`
       //this is for no space between the words
       white-space: nowrap;
     }
-  }
-`;
-
-const Button = styled.button`
-  color: white;
-  padding: 10px 18px;
-  border-radius: 5px;
-  background: #000;
-  min-width: 220px;
-  border: none;
-  font-size: 16px;
-
-
-  //& is used as sudo symbol and for hover property in sass css
-  &:hover{
-
   }
 `;
